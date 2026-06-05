@@ -1,149 +1,215 @@
+/* ===== BASE ===== */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background: #f5f6fa;
+    color: #222;
+    line-height: 1.5;
+}
+
+/* ===== HERO ===== */
 .hero{
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    text-align: center;
+    display:flex;
+    flex-direction:column;
+    height:100vh;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    gap:1rem;
+    padding:20px;
 }
 
 .hero img{
-    border-radius: 50%;
-    height: 150px;
-    width: 150px;
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    object-fit:cover;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
 }
 
+.hero h1{
+    font-size:2.2rem;
+}
+
+.hero h2{
+    font-size:1.2rem;
+    font-weight:400;
+    opacity:0.7;
+}
+
+/* ===== BOTONES ===== */
 .btn{
-    background-color: #3e3f4a;
-    color: white;
-    text-decoration: none;
-    padding: 15px 30px;
-    border-radius: 30px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    background:#3e3f4a;
+    color:#fff;
+    padding:12px 25px;
+    border-radius:30px;
+    text-decoration:none;
+    transition:0.3s;
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
 }
 
 .btn:hover{
-    background-color: #4c5679;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    transform:translateY(-3px);
+    background:#4c5679;
 }
 
+/* ===== SECCIONES ===== */
+.skills,
+.projects,
+.contact{
+    padding:80px 20px;
+    max-width:1100px;
+    margin:auto;
+}
+
+/* ===== TITULOS ===== */
+h2{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:1.8rem;
+}
+
+/* ===== SKILLS ===== */
 .skills-container{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-@media (max-width: 900px){
-    .skills-container{
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px){
-    .skills-container{
-        grid-template-columns: 1fr;
-    }
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
 }
 
 .skill-card{
-    background-color: #d3d5e1;
-    padding: 25px;
-    border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    transition: all 0.3s ease;
+    background:#fff;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.08);
+    transition:0.3s;
 }
 
 .skill-card:hover{
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.12);
 }
 
 .skill-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 12px;
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:10px;
 }
 
 .skill-name{
-    font-weight: 600;
-    font-size: 1rem;
-    color: #222;
+    font-weight:600;
 }
 
 .skill-percent{
-    font-size: 0.85rem;
-    opacity: 0.6;
-    color: #222;
+    font-size:0.85rem;
+    opacity:0.6;
 }
 
-/* barra de progreso */
+/* ===== PROGRESS ===== */
 .bar{
-    width: 100%;
-    height: 10px;
-    background-color: #eee;
-    border-radius: 10px;
-    overflow: hidden;
-    margin-top: 5px;
+    width:100%;
+    height:10px;
+    background:#eee;
+    border-radius:10px;
+    overflow:hidden;
 }
 
-/* progreso base */
-.progress {
-    width: 0%;
-    height: 10px;
-    background-color: #8f9c9e;
-    transition: width 1.5s ease-in-out;
+.progress{
+    height:100%;
+    width:0%;
+    background:#4c5679;
 }
 
-/* animaciones */
-.html {
-    animation: load80 1.5s ease-in-out forwards;
+/* ===== ANIMACIONES ===== */
+.html{animation:load80 1.5s forwards;}
+.css{animation:load60 1.5s forwards;}
+.js{animation:load40 1.5s forwards;}
+.python{animation:load60 1.5s forwards;}
+.java{animation:load90 1.5s forwards;}
+.git{animation:load70 1.5s forwards;}
+
+@keyframes load80{to{width:80%;}}
+@keyframes load60{to{width:60%;}}
+@keyframes load40{to{width:40%;}}
+@keyframes load70{to{width:70%;}}
+@keyframes load90{to{width:90%;}}
+
+/* ===== PROJECTS ===== */
+.projects-container{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
 }
 
-.css {
-    animation: load60 1.5s ease-in-out forwards;
+.project-card{
+    background:#fff;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 6px 18px rgba(0,0,0,0.08);
+    transition:0.3s;
 }
 
-.js {
-    animation: load40 1.5s ease-in-out forwards;
+.project-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 12px 30px rgba(0,0,0,0.12);
 }
 
-.python {
-    animation: load60 1.5s ease-in-out forwards;
+.project-card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
 }
 
-.java {
-    animation: load90 1.5s ease-in-out forwards;
+.project-card h3{
+    margin:15px;
 }
 
-.git {
-    animation: load70 1.5s ease-in-out forwards;
+.project-card p{
+    margin:0 15px 15px;
+    opacity:0.7;
 }
 
-@keyframes load70 {
-    from { width: 0%; }
-    to { width: 70%; }
+.btn-small{
+    display:inline-block;
+    margin:0 15px 15px;
+    padding:8px 15px;
+    background:#3e3f4a;
+    color:#fff;
+    border-radius:20px;
+    text-decoration:none;
 }
 
-@keyframes load90 {
-    from { width: 0%; }
-    to { width: 90%; }
+/* ===== CONTACTO ===== */
+.contact form{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    max-width:500px;
+    margin:auto;
 }
 
-@keyframes load80 {
-    from { width: 0%; }
-    to { width: 80%; }
+.contact input,
+.contact textarea{
+    padding:12px;
+    border-radius:10px;
+    border:1px solid #ddd;
 }
 
-@keyframes load60 {
-    from { width: 0%; }
-    to { width: 60%; }
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+    .skills-container,
+    .projects-container{
+        grid-template-columns:repeat(2,1fr);
+    }
 }
 
-@keyframes load40 {
-    from { width: 0%; }
-    to { width: 40%; }
+@media(max-width:600px){
+    .skills-container,
+    .projects-container{
+        grid-template-columns:1fr;
+    }
 }
